@@ -8,7 +8,7 @@ param (
     [string]$caminhoDestino
 )
 
-$scriptPython = "D:\xampp\htdocs\loterias\loterias-backend\scripts\converter.py"
+$scriptPython = "D:\xampp\htdocs\loterias\loterias-backend\src\scripts\converter.py"
 $comando = "python `"$scriptPython`" `"$caminhoOrigem`" `"$caminhoDestino`""
 
 Write-Host "Executando conversao com Python..."
