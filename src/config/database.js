@@ -14,7 +14,14 @@ const configs = {
     user: process.env.LF_PROD_USER,
     password: process.env.LF_PROD_PASSWORD,
     database: process.env.LF_PROD_DATABASE
+  },
+  quina: {
+    host: process.env.QN_PROD_HOST,
+    user: process.env.QN_PROD_USER,
+    password: process.env.QN_PROD_PASSWORD,
+    database: process.env.QN_PROD_DATABASE
   }
+
 };
 
 function getConnection(tipo) {
@@ -26,11 +33,12 @@ function getConnection(tipo) {
 
 // Teste rápido de conexão
 try {
-  const db = getConnection('megasena');
-  console.log('✅ Conexão com megasena OK');
+  console.log('Testando conexão com o banco de dados. Escolhendo quina...');
+  const db = getConnection('quina');
+  console.log('✅ Conexão com quina OK');
   db.end();
 } catch (erro) {
-  console.error('❌ Erro ao conectar em megasena:', erro.message);
+  console.error('❌ Erro ao conectar em quina:', erro.message);
 }
 
 module.exports = { getConnection };
